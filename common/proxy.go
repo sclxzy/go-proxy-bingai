@@ -89,7 +89,8 @@ func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 		if randIP == "" {
 			randIP = GetRandomIP()
 		}
-		req.Header.Set("X-Forwarded-For", randIP)
+		// req.Header.Set("X-Forwarded-For", randIP)
+		req.Header.Set("X-Forwarded-For", "4.2.3.2")
 
 		// 未登录用户
 		ckUserToken, _ := req.Cookie(USER_TOKEN_COOKIE_NAME)
